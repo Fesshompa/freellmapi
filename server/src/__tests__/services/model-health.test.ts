@@ -7,13 +7,12 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import Database from 'better-sqlite3';
 import {
-  observeModelHealth,
   readAllModelHealthStatus,
   resetAllModelHealth,
   recordModelHealthFailing,
   recordModelHealthWorking,
 } from '../../services/model-health.js';
-import { initDb, getDb } from '../../db/index.js';
+import { initDb } from '../../db/index.js';
 
 let db: Database.Database;
 

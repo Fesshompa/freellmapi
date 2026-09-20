@@ -22,14 +22,12 @@
 
 import { getDb } from '../db/index.js';
 import type { RouteResult } from '../services/router.js';
-import type { Db } from '../db/types.js';
 
 const OBSERVATION_LOG_DISABLED = false;
 
 export type ModelHealthStatus = 'unknown' | 'working' | 'failing';
 
 const FAILURE_THRESHOLD = 3;
-const FAILURE_WINDOW_MS = 15 * 60 * 1000;
 
 // ── Snapshot (always written) ──────────────────────────────────────────────
 
