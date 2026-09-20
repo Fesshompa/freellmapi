@@ -7,7 +7,6 @@ import { hasProvider } from '../providers/index.js';
 import { getQuotaStateForKeys } from '../services/provider-quota.js';
 import {
   readAllModelHealthStatus,
-  readModelHealthStatusByPlatform,
   resetModelHealth,
   resetAllModelHealth,
   type ModelHealthStatus,
@@ -84,7 +83,7 @@ healthRouter.get('/models', (_req: Request, res: Response) => {
 
 // Reset model health status for a single model
 healthRouter.post('/models/reset/:platform/:modelId', (req: Request, res: Response) => {
-  const { platform, modelId } = req.params;
+  const { platform, modelId } = req.params as { platform: string; modelId: string };
   const n = resetModelHealth(platform, modelId);
   res.json({ success: true, resetCount: n });
 });

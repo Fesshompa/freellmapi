@@ -38,6 +38,10 @@ const REQUEST_CALLER_FILENAME = '20260901_000003_request_caller.ts';
 const ANALYTICS_LATENCY_PERCENTILE_INDEX_FILENAME = '20260902_000001_analytics_latency_percentile_index.ts';
 const MCP_ENABLED_DEFAULT_FILENAME = '20260903_000001_mcp_enabled_default.ts';
 const RESPONSE_CACHE_FILENAME = '20260903_000002_response_cache.ts';
+const KEY_MONTHLY_BUDGET_FILENAME = '20260904_000001_key_monthly_budget.ts';
+const KEY_MONTHLY_USAGE_FILENAME = '20260914_000001_key_monthly_usage.ts';
+const QUOTA_SNAPSHOT_FRESHNESS_FILENAME = '20260915_000001_quota_snapshot_freshness.ts';
+const MODEL_HEALTH_STATUS_FILENAME = '20260915_000002_model_health_status.ts';
 
 interface SchemaRow {
   type: string;
@@ -122,6 +126,10 @@ describe('migration round trip', () => {
         ANALYTICS_LATENCY_PERCENTILE_INDEX_FILENAME,
         MCP_ENABLED_DEFAULT_FILENAME,
         RESPONSE_CACHE_FILENAME,
+        KEY_MONTHLY_BUDGET_FILENAME,
+        KEY_MONTHLY_USAGE_FILENAME,
+        QUOTA_SNAPSHOT_FRESHNESS_FILENAME,
+        MODEL_HEALTH_STATUS_FILENAME,
       ]);
     } finally {
       db.close();

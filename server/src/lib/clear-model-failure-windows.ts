@@ -4,7 +4,7 @@
 // a restart doesn't artificially retain stale failure state for models whose
 // upstream has since recovered.
 
-import { modelFailureTimestamps, clearModelFailure, emptyCompletionStreaks } from './fallback-loop.js';
+import { modelFailureTimestamps, emptyCompletionStreaks } from './fallback-loop.js';
 import { resetAllModelHealth } from '../services/model-health.js';
 
 /** Clear every in-flight model-failure streak and the persisted health snapshot
